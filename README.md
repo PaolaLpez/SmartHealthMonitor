@@ -22,3 +22,8 @@ Desarrollada como proyecto integrador en UTNG — 9° Cuatrimestre 2025.
 ## Autor
 
 Paola Jaqueline López Mata — UTNG — [paola.lopez@utng.edu.mx](mailto:nombre.apellido@utng.edu.mx)
+
+## Capturas de la Aplicación
+<img width="367" height="816" alt="image" src="https://github.com/user-attachments/assets/08d0ba20-424f-438e-b2a0-b77803ac43a4" />
+<img width="379" height="843" alt="image" src="https://github.com/user-attachments/assets/d2ddd3fa-d49d-4596-b03c-026db8943bfc" />
+
