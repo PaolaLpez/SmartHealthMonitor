@@ -45,7 +45,8 @@ fun DashboardScreen(
 
     val pasos by viewModel.pasos.collectAsState()
 
-    val historial = viewModel.historial
+    // Historial desde Room
+    val historial by viewModel.historial.collectAsState()
 
     SmartHealthMonitorTheme {
 
@@ -148,7 +149,7 @@ fun DashboardScreen(
 
                 // Lista historial
                 items(
-                    historial,
+                    items = historial,
                     key = { it.id }
                 ) { lectura ->
 

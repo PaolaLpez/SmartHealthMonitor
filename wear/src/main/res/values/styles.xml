@@ -1,0 +1,9 @@
+<resources>
+
+    <style name="Theme.SmartHealthMonitor.Wear" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
+    <style name="MainActivityTheme.Starting" parent="Theme.SmartHealthMonitor.Wear" />
+
+</resources>
