@@ -1,6 +1,5 @@
 package mx.utng.smarthealthmonitor.navigation
 
-
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -21,6 +20,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import mx.utng.smarthealthmonitor.LoginScreen
 import mx.utng.smarthealthmonitor.ui.screens.DashboardScreen
+import mx.utng.smarthealthmonitor.ui.screens.HistorialScreen
 import mx.utng.smarthealthmonitor.ui.theme.SmartHealthMonitorTheme
 
 @Composable
@@ -68,9 +68,7 @@ fun SmartHealthNavGraph() {
         // HISTORIAL
         composable(Screen.Historial.route) {
 
-            PantallaEnConstruccion(
-                titulo = "Historial completo",
-
+            HistorialScreen(
                 onBack = {
                     navController.popBackStack()
                 }

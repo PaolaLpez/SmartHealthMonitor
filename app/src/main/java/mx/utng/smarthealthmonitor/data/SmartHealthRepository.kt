@@ -9,6 +9,9 @@ import kotlinx.coroutines.flow.emptyFlow
 import mx.utng.smarthealthmonitor.data.db.LecturaFC
 import mx.utng.smarthealthmonitor.data.db.LecturaFCDao
 import mx.utng.smarthealthmonitor.data.db.SmartHealthDB
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 /**
  * Repositorio singleton que centraliza los datos de salud.
@@ -32,11 +35,20 @@ object SmartHealthRepository {
     }
 
     suspend fun actualizarFC(bpm: Int) {
+
         _fcFlow.value = bpm
+
+        val ahora = System.currentTimeMillis()
 
         dao?.insertar(
             LecturaFC(
-                valorBpm = bpm
+                valorBpm = bpm,
+                timestamp = ahora,
+                hora = SimpleDateFormat(
+                    "HH:mm",
+                    Locale.getDefault()
+                ).format(Date(ahora)),
+                esNormal = bpm in 60..100
             )
         )
     }
@@ -47,5 +59,13 @@ object SmartHealthRepository {
 
     fun obtenerHistorial(): Flow<List<LecturaFC>> {
         return dao?.obtenerUltimas() ?: emptyFlow()
+    }
+
+    suspend fun limpiarHistorialAntiguo() {
+
+        val sieteDias = 7L * 24 * 60 * 60 * 1000
+        val limite = System.currentTimeMillis() - sieteDias
+
+        dao?.limpiarViejos(limite)
     }
 }

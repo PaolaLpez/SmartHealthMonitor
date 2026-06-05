@@ -1,20 +1,17 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.devtools.ksp")
+    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "mx.utng.smarthealthmonitor"
+    namespace = "mx.utng.smarthealthmonitor.wear"
 
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
-        applicationId = "mx.utng.smarthealthmonitor"
+        applicationId = "mx.utng.smarthealthmonitor.wear"
         minSdk = 30
         targetSdk = 36
         versionCode = 1
@@ -36,7 +33,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
-    useLibrary("wear-sdk")
+    kotlinOptions {
+        jvmTarget = "11"
+    }
 
     buildFeatures {
         compose = true
@@ -45,31 +44,31 @@ android {
 
 dependencies {
 
+    // Compose BOM
     implementation(platform(libs.androidx.compose.bom))
+
+    // Compose base
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.wear.compose.ui.tooling)
+
+    // Wear Compose (ESTO ARREGLA foundation)
+    implementation(libs.androidx.wear.compose.foundation)
+    implementation(libs.androidx.wear.compose.material3)
     implementation(libs.androidx.wear.tooling.preview)
-    implementation(libs.compose.material3)
-    implementation(libs.compose.ui.tooling)
+
+    // Material normal (opcional)
+    implementation(libs.androidx.compose.material3)
+
+    // Wear OS
     implementation(libs.play.services.wearable)
 
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    // Splash
+    implementation(libs.androidx.core.splashscreen)
 
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
-    debugImplementation(libs.androidx.compose.ui.tooling)
-
-    implementation("androidx.health:health-services-client:1.0.0-beta01")
-
+    // Coroutines + Health base (si lo usas)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
     implementation("com.google.guava:guava:33.0.0-android")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.7.3")
-
-    val roomVersion = "2.6.1"
-    implementation("androidx.room:room-runtime:$roomVersion")
-    implementation("androidx.room:room-ktx:$roomVersion")
-    ksp("androidx.room:room-compiler:$roomVersion")
 }
