@@ -1,7 +1,8 @@
 [versions]
-agp = "8.6.1"
-kotlin = "2.1.10"
-ksp = "2.1.10-1.0.29"
+agp = "9.2.1"
+kotlin = "2.2.10"
+ksp = "2.3.2"
+healthServices = "1.0.0-beta01"
 
 coreKtx = "1.15.0"
 lifecycleRuntimeKtx = "2.8.7"
@@ -10,7 +11,7 @@ activityCompose = "1.10.0"
 composeBom = "2024.10.00"
 playServicesWearable = "20.0.1"
 
-wearCompose = "1.3.1"
+wearCompose = "1.5.0"
 wearToolingPreview = "1.0.0"
 
 coreSplashscreen = "1.0.1"
@@ -18,7 +19,6 @@ coreSplashscreen = "1.0.1"
 junit = "4.13.2"
 junitVersion = "1.3.0"
 espressoCore = "3.7.0"
-
 
 [libraries]
 
@@ -48,7 +48,7 @@ androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-te
 
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 
-# WEAR OS (CORREGIDO)
+# WEAR OS
 androidx-wear-compose-material3 = { group = "androidx.wear.compose", name = "compose-material3", version.ref = "wearCompose" }
 
 androidx-wear-compose-foundation = { group = "androidx.wear.compose", name = "compose-foundation", version.ref = "wearCompose" }
@@ -57,12 +57,14 @@ androidx-wear-compose-ui-tooling = { group = "androidx.wear.compose", name = "co
 
 androidx-wear-tooling-preview = { group = "androidx.wear", name = "wear-tooling-preview", version.ref = "wearToolingPreview" }
 
+# HEALTH SERVICES
+androidx-health-services-client = { group = "androidx.health", name = "health-services-client", version.ref = "healthServices" }
+
 # GOOGLE
 play-services-wearable = { group = "com.google.android.gms", name = "play-services-wearable", version.ref = "playServicesWearable" }
 
 # SPLASH
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashscreen" }
-
 
 [plugins]
 

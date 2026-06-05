@@ -71,4 +71,8 @@ dependencies {
     // Coroutines + Health base (si lo usas)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
     implementation("com.google.guava:guava:33.0.0-android")
+    implementation("androidx.health:health-services-client:1.0.0-beta01")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.7.3")
+    implementation("androidx.health:health-services-client:1.0.0-beta01")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.7.3")
 }

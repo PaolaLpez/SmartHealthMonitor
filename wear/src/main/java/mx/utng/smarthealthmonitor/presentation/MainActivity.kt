@@ -1,6 +1,6 @@
 /* While this template provides a good starting point for using Wear Compose, you can always
  * take a look at https://github.com/android/wear-os-samples/tree/main/ComposeStarter to find the
- * most up to date changes to the libraries and their usages.
+ * most up-to-date changes to the libraries and their usages.
  */
 
 package mx.utng.smarthealthmonitor.presentation
@@ -29,7 +29,7 @@ import androidx.wear.compose.material3.lazy.transformedHeight
 import androidx.wear.compose.ui.tooling.preview.WearPreviewDevices
 import androidx.wear.compose.ui.tooling.preview.WearPreviewFontScales
 import kotlinx.coroutines.launch
-import mx.utng.smarthealthmonitor.R
+import mx.utng.smarthealthmonitor.wear.R
 import mx.utng.smarthealthmonitor.presentation.theme.SmartHealthMonitorTheme
 
 class MainActivity : ComponentActivity() {
