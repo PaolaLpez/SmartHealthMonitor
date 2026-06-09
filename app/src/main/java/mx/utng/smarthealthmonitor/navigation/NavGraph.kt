@@ -1,5 +1,6 @@
 package mx.utng.smarthealthmonitor.navigation
 
+import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -19,6 +20,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import mx.utng.smarthealthmonitor.LoginScreen
+import mx.utng.smarthealthmonitor.ui.screens.AlertaScreen
 import mx.utng.smarthealthmonitor.ui.screens.DashboardScreen
 import mx.utng.smarthealthmonitor.ui.screens.HistorialScreen
 import mx.utng.smarthealthmonitor.ui.theme.SmartHealthMonitorTheme
@@ -37,7 +39,6 @@ fun SmartHealthNavGraph() {
         composable(Screen.Login.route) {
 
             LoginScreen(
-
                 onLoginSuccess = {
 
                     navController.navigate(Screen.Dashboard.route) {
@@ -78,10 +79,23 @@ fun SmartHealthNavGraph() {
         // ALERTA
         composable(Screen.Alerta.route) {
 
-            PantallaEnConstruccion(
-                titulo = "Enviar alerta",
+            AlertaScreen(
 
-                onBack = {
+                fc = 145,
+
+                onDismiss = {
+                    navController.popBackStack()
+                },
+
+                onConfirmar = { nota ->
+
+                    Log.d(
+                        "SmartHealth",
+                        "Alerta enviada. Nota: $nota"
+                    )
+
+                    // TODO S7: enviar alerta real a contactos
+
                     navController.popBackStack()
                 }
             )
@@ -135,7 +149,6 @@ fun PantallaEnConstruccion(
 
                 Text(
                     text = "Próximamente: $titulo",
-
                     style = MaterialTheme.typography.titleMedium
                 )
             }
