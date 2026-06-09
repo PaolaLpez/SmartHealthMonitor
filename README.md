@@ -58,11 +58,11 @@ Desarrollada como proyecto integrador — UTNG 9° Cuatrimestre 2025.
 <img width="379" height="843" alt="DashboardScreen" src="https://github.com/user-attachments/assets/d2ddd3fa-d49d-4596-b03c-026db8943bfc" />
 
 ### HistorialScreen
-
+![historial.png](../../Downloads/historial.png)
 *(Agregar captura cuando esté disponible)*
 
 ### AlertaScreen
-
+![alerta.png](../../Downloads/alerta.png)
 *(Agregar captura cuando esté disponible)*
 
 ---
