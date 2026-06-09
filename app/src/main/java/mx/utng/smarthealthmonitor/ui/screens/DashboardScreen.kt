@@ -15,6 +15,9 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
@@ -22,11 +25,16 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import kotlinx.coroutines.launch
 import mx.utng.smarthealthmonitor.ui.components.FilaHistorial
 import mx.utng.smarthealthmonitor.ui.components.TarjetaDato
 import mx.utng.smarthealthmonitor.ui.theme.SmartHealthMonitorTheme
@@ -45,12 +53,64 @@ fun DashboardScreen(
 
     val pasos by viewModel.pasos.collectAsState()
 
-    // Historial desde Room
+    // Historial
     val historial by viewModel.historial.collectAsState()
+
+    // Estado del diálogo
+    var mostrarAlerta by remember {
+        mutableStateOf(false)
+    }
+
+    // Snackbar
+    val snackbarHostState = remember {
+        SnackbarHostState()
+    }
+
+    val scope = rememberCoroutineScope()
+
+    // Dialog de alerta
+    if (mostrarAlerta) {
+
+        AlertaScreen(
+
+            fc = fc,
+
+            onDismiss = {
+                mostrarAlerta = false
+            },
+
+            onConfirmar = { nota ->
+
+                mostrarAlerta = false
+
+                scope.launch {
+
+                    snackbarHostState.showSnackbar(
+
+                        message =
+                            if (nota.isBlank()) {
+                                "✅ Alerta enviada a tus contactos de emergencia"
+                            } else {
+                                "✅ Alerta enviada: $nota"
+                            },
+
+                        duration = SnackbarDuration.Long
+                    )
+                }
+            }
+        )
+    }
 
     SmartHealthMonitorTheme {
 
         Scaffold(
+
+            snackbarHost = {
+
+                SnackbarHost(
+                    hostState = snackbarHostState
+                )
+            },
 
             topBar = {
 
@@ -74,7 +134,11 @@ fun DashboardScreen(
             floatingActionButton = {
 
                 FloatingActionButton(
-                    onClick = onAlertClick,
+
+                    onClick = {
+                        mostrarAlerta = true
+                    },
+
                     containerColor = MaterialTheme.colorScheme.error
                 ) {
 
@@ -168,13 +232,11 @@ fun DashboardScreen(
     showSystemUi = true,
     device = "id:pixel_6"
 )
-
 @Preview(
     showBackground = true,
     name = "Dashboard - Dark",
     uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES
 )
-
 @Composable
 private fun DashboardScreenPreview() {
 
