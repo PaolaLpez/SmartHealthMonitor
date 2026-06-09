@@ -11,8 +11,6 @@ import kotlinx.coroutines.launch
 class WearListenerService : WearableListenerService() {
 
     companion object {
-        const val PATH_FC = "/smarthealthmonitor/fc"
-        const val PATH_PASOS = "/smarthealthmonitor/pasos"
         private const val TAG = "WearListener"
     }
 
@@ -24,28 +22,24 @@ class WearListenerService : WearableListenerService() {
         val data = String(messageEvent.data)
         val path = messageEvent.path
 
-        Log.d(TAG, "Mensaje recibido: path=$path, data=$data")
+        Log.d(TAG, "📥 Mensaje recibido: path=$path, data=$data")
 
         when (path) {
-
-            PATH_FC -> {
+            "/heart_rate" -> {
                 val bpm = data.toIntOrNull() ?: return
-
+                Log.d(TAG, "❤️ FC recibida: $bpm")
                 serviceScope.launch {
                     SmartHealthRepository.actualizarFC(bpm)
+                    Log.d(TAG, "✅ FC guardada: $bpm")
                 }
             }
-
-            PATH_PASOS -> {
+            "/steps" -> {
                 val pasos = data.toIntOrNull() ?: return
-
+                Log.d(TAG, "👟 Pasos recibidos: $pasos")
                 serviceScope.launch {
                     SmartHealthRepository.actualizarPasos(pasos)
+                    Log.d(TAG, "✅ Pasos guardados: $pasos")
                 }
-            }
-
-            else -> {
-                Log.w(TAG, "Path desconocido: $path")
             }
         }
     }
