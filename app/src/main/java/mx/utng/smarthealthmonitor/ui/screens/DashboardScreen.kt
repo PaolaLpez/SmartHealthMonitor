@@ -85,7 +85,7 @@ fun DashboardScreen(
 
                 scope.launch {
 
-                    snackbarHostState.showSnackbar(
+                    val resultado = snackbarHostState.showSnackbar(
 
                         message =
                             if (nota.isBlank()) {
@@ -94,8 +94,20 @@ fun DashboardScreen(
                                 "✅ Alerta enviada: $nota"
                             },
 
+                        actionLabel = "Deshacer",
+
                         duration = SnackbarDuration.Long
                     )
+
+                    if (resultado == androidx.compose.material3.SnackbarResult.ActionPerformed) {
+
+                        snackbarHostState.showSnackbar(
+
+                            message = "❌ Alerta cancelada",
+
+                            duration = SnackbarDuration.Short
+                        )
+                    }
                 }
             }
         )
