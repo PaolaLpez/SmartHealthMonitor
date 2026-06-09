@@ -1,9 +1,9 @@
 package mx.utng.smarthealthmonitor.ui.screens
 
-
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Warning
@@ -13,6 +13,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.*
@@ -25,10 +26,12 @@ import mx.utng.smarthealthmonitor.ui.theme.SmartHealthMonitorTheme
 fun AlertaScreen(
     fc: Int,
     onDismiss: () -> Unit,
-    onConfirmar: () -> Unit
+    onConfirmar: (String) -> Unit
 ) {
 
     var enviando by remember { mutableStateOf(false) }
+
+    var nota by remember { mutableStateOf("") }
 
     AlertDialog(
 
@@ -69,6 +72,21 @@ fun AlertaScreen(
                         "Se notificará a tus contactos de emergencia.\n" +
                                 "Esta acción no se puede deshacer."
                 )
+
+                OutlinedTextField(
+                    value = nota,
+                    onValueChange = { nota = it },
+
+                    label = {
+                        Text("Nota opcional")
+                    },
+
+                    placeholder = {
+                        Text("Ej. Me siento mareado")
+                    },
+
+                    modifier = Modifier.fillMaxWidth()
+                )
             }
         },
 
@@ -79,7 +97,7 @@ fun AlertaScreen(
                 onClick = {
 
                     enviando = true
-                    onConfirmar()
+                    onConfirmar(nota)
                 },
 
                 enabled = !enviando,
@@ -102,7 +120,7 @@ fun AlertaScreen(
                 } else {
 
                     Text(
-                        "CONFIRMAR ALERTA",
+                        text = "CONFIRMAR ALERTA",
                         style = MaterialTheme.typography.labelLarge
                     )
                 }
@@ -138,7 +156,7 @@ private fun AlertaScreenPreview() {
         AlertaScreen(
             fc = 145,
             onDismiss = {},
-            onConfirmar = {}
+            onConfirmar = { _ -> }
         )
     }
 }

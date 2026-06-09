@@ -1,5 +1,6 @@
 package mx.utng.smarthealthmonitor.navigation
 
+import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -38,7 +39,6 @@ fun SmartHealthNavGraph() {
         composable(Screen.Login.route) {
 
             LoginScreen(
-
                 onLoginSuccess = {
 
                     navController.navigate(Screen.Dashboard.route) {
@@ -87,9 +87,15 @@ fun SmartHealthNavGraph() {
                     navController.popBackStack()
                 },
 
-                onConfirmar = {
+                onConfirmar = { nota ->
+
+                    Log.d(
+                        "SmartHealth",
+                        "Alerta enviada. Nota: $nota"
+                    )
 
                     // TODO S7: enviar alerta real a contactos
+
                     navController.popBackStack()
                 }
             )
