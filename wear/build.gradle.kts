@@ -99,4 +99,10 @@ dependencies {
 
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    implementation("androidx.wear.compose:compose-material:1.4.1")
+
+    implementation("androidx.activity:activity-compose:1.10.1")
+
+    implementation(platform("androidx.compose:compose-bom:2025.01.01"))
 }
