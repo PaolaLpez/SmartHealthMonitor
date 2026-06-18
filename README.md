@@ -107,5 +107,5 @@ Ingeniería en Desarrollo y Gestión de Software
 
 * [x] WearDashboardScreen — Unidad II
 * [x] WearHistorialScreen — Unidad II
-* [x] WearAlertaScreen — Unidad II
+* [x] WearAlertaaScreen — Unidad II
 * [x] SmartHealth WatchFace — Unidad II
