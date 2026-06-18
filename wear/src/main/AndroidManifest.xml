@@ -27,6 +27,7 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
+        <!-- MAIN ACTIVITY -->
         <activity
             android:name="mx.utng.smarthealthmonitor.presentation.MainActivity"
             android:exported="true"
@@ -40,6 +41,7 @@
 
         </activity>
 
+        <!-- HEALTH SERVICE -->
         <service
             android:name="mx.utng.smarthealthmonitor.presentation.HealthDataService"
             android:exported="true"
@@ -51,9 +53,21 @@
 
         </service>
 
+        <!-- STEP COUNTER -->
         <service
             android:name="mx.utng.smarthealthmonitor.presentation.StepCounterService"
             android:exported="false" />
+
+        <!-- DATA LAYER LISTENER -->
+        <service
+            android:name="mx.utng.smarthealthmonitor.presentation.HistorialWearListener"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+            </intent-filter>
+
+        </service>
 
     </application>
 

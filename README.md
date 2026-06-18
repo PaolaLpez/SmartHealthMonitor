@@ -84,3 +84,28 @@ Ingeniería en Desarrollo y Gestión de Software
 * [x] Integración Wearable Data Layer API — S6
 * [ ] Persistencia completa con Room — S7
 * [ ] Android TV (Leanback + Media3) — S10–S12
+
+---
+
+## Unidad II — Wear OS
+
+| Pantalla | Descripción |
+|---|---|
+| WearDashboardScreen | FC en tiempo real con ScalingLazyColumn y TimeText |
+| WearHistorialScreen | Lista con Rotary Input (corona del reloj) |
+| WearAlertaScreen | Botones circulares de confirmación |
+| SmartHealth WatchFace | Hora + FC en el WatchFace nativo |
+
+![WatchHistorial](screenshots/watch_Historial.png)
+
+![WearDashboard](screenshots/wear_dashboard.png)
+
+![WearAlerta](screenshots/wear_alerta.png)
+
+
+---
+
+* [x] WearDashboardScreen — Unidad II
+* [x] WearHistorialScreen — Unidad II
+* [x] WearAlertaScreen — Unidad II
+* [x] SmartHealth WatchFace — Unidad II

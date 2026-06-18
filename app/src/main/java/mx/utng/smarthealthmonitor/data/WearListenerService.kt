@@ -22,24 +22,22 @@ class WearListenerService : WearableListenerService() {
         val data = String(messageEvent.data)
         val path = messageEvent.path
 
-        Log.d(TAG, "📥 Mensaje recibido: path=$path, data=$data")
+        Log.d(TAG, "📥 Recibido: $path -> $data")
 
         when (path) {
+
             "/heart_rate" -> {
                 val bpm = data.toIntOrNull() ?: return
-                Log.d(TAG, "❤️ FC recibida: $bpm")
+
                 serviceScope.launch {
                     SmartHealthRepository.actualizarFC(bpm)
-                    Log.d(TAG, "✅ FC guardada: $bpm")
+                    Log.d(TAG, "❤️ Guardado FC: $bpm")
                 }
             }
+
             "/steps" -> {
                 val pasos = data.toIntOrNull() ?: return
-                Log.d(TAG, "👟 Pasos recibidos: $pasos")
-                serviceScope.launch {
-                    SmartHealthRepository.actualizarPasos(pasos)
-                    Log.d(TAG, "✅ Pasos guardados: $pasos")
-                }
+                SmartHealthRepository.actualizarPasos(pasos)
             }
         }
     }

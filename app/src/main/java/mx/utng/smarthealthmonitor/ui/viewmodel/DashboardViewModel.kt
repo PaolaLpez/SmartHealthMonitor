@@ -2,13 +2,14 @@ package mx.utng.smarthealthmonitor.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
 import mx.utng.smarthealthmonitor.data.SmartHealthRepository
+import mx.utng.smarthealthmonitor.data.WearSyncManager
 import mx.utng.smarthealthmonitor.data.db.LecturaFC
 import mx.utng.smarthealthmonitor.data.models.MockData
+import mx.utng.smarthealthmonitor.SmartHealthAppHolder
 
 class DashboardViewModel : ViewModel() {
 
@@ -32,7 +33,7 @@ class DashboardViewModel : ViewModel() {
             initialValue = MockData.pasosActual
         )
 
-    // Historial real desde Room
+    // Historial desde Room
     val historial: StateFlow<List<LecturaFC>> =
         SmartHealthRepository.obtenerHistorial()
             .stateIn(
@@ -40,4 +41,23 @@ class DashboardViewModel : ViewModel() {
                 started = SharingStarted.WhileSubscribed(5_000),
                 initialValue = emptyList()
             )
+
+    // 🔥 SINCRONIZACIÓN AUTOMÁTICA CON WEAR
+    init {
+        viewModelScope.launch(Dispatchers.IO) {
+
+            SmartHealthRepository.obtenerHistorial()
+                .collect { lista ->
+
+                    // evita spam si está vacío
+                    if (lista.isNotEmpty()) {
+
+                        WearSyncManager.enviarHistorial(
+                            context = SmartHealthAppHolder.context,
+                            lista = lista
+                        )
+                    }
+                }
+        }
+    }
 }

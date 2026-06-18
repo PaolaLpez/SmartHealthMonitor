@@ -12,6 +12,7 @@ import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class StepCounterService : Service(), SensorEventListener {
@@ -19,45 +20,68 @@ class StepCounterService : Service(), SensorEventListener {
     private lateinit var sensorManager: SensorManager
     private var stepSensor: Sensor? = null
     private var totalSteps = 0
-    private val serviceJob = Job()
-    private val scope = CoroutineScope(Dispatchers.IO + serviceJob)
-    private lateinit var wearDataSender: WearDataSender
+
+    private val job = Job()
+    private val scope = CoroutineScope(Dispatchers.IO + job)
 
     override fun onCreate() {
         super.onCreate()
-        wearDataSender = WearDataSender(this)
+
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+
         stepSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
 
         if (stepSensor != null) {
-            sensorManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_NORMAL)
-            Log.d("StepCounter", "✅ Sensor de pasos registrado")
-        } else {
-            Log.e("StepCounter", "❌ No hay sensor de pasos en este dispositivo")
-        }
-    }
 
-    override fun onSensorChanged(event: SensorEvent?) {
-        if (event?.sensor?.type == Sensor.TYPE_STEP_COUNTER) {
-            totalSteps = event.values[0].toInt()
-            Log.d("StepCounter", "👟 Pasos detectados: $totalSteps")
+            sensorManager.registerListener(
+                this,
+                stepSensor,
+                SensorManager.SENSOR_DELAY_NORMAL
+            )
+
+            Log.d("StepCounter", "✅ Sensor activo")
+
+        } else {
+
+            Log.e("StepCounter", "❌ Sin sensor, simulando")
 
             scope.launch {
-                wearDataSender.enviarPasos(totalSteps)
+
+                while (true) {
+
+                    delay(30000)
+
+                    totalSteps += (1..3).random()
+
+                    Log.d("StepCounter", "👟 Simulado: $totalSteps")
+                }
             }
         }
     }
 
-    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-        // No necesitamos implementar esto
+    override fun onSensorChanged(event: SensorEvent?) {
+
+        if (event?.sensor?.type == Sensor.TYPE_STEP_COUNTER) {
+
+            totalSteps = event.values[0].toInt()
+
+            Log.d("StepCounter", "👟 Pasos: $totalSteps")
+
+            // ❌ YA NO DEPENDE DE NINGUNA CLASE EXTERNA
+            // aquí después conectamos DataLayer si quieres
+        }
     }
+
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
 
     override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onDestroy() {
         super.onDestroy()
+
         sensorManager.unregisterListener(this)
-        serviceJob.cancel()
-        Log.d("StepCounter", "Servicio de pasos detenido")
+        job.cancel()
+
+        Log.d("StepCounter", "Servicio detenido")
     }
 }
