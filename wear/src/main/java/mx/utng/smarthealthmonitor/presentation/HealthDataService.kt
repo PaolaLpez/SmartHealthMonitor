@@ -15,40 +15,38 @@ import kotlinx.coroutines.launch
 
 class HealthDataService : PassiveListenerService() {
 
-    private val serviceJob = Job()
-    private val scope = CoroutineScope(Dispatchers.IO + serviceJob)
+    private val job = Job()
+    private val scope = CoroutineScope(Dispatchers.IO + job)
 
-    private lateinit var wearDataSender: WearDataSender
+    override fun onNewDataPointsReceived(dataPoints: DataPointContainer) {
 
-    override fun onCreate() {
-        super.onCreate()
-        wearDataSender = WearDataSender(this)
-        Log.d("HealthDataService", "Servicio creado")
-    }
-
-    override fun onNewDataPointsReceived(
-        dataPoints: DataPointContainer
-    ) {
-        // Obtener frecuencia cardíaca
         val heartRateData = dataPoints.getData(DataType.HEART_RATE_BPM)
+
         for (dataPoint in heartRateData) {
+
             val bpm = dataPoint.value.toInt()
-            Log.d("HealthDataService", "FC detectada: $bpm")
+
+            Log.d("HealthService", "FC detectada: $bpm")
+
             scope.launch {
-                wearDataSender.enviarFC(bpm)
+                // aquí puedes mandar a DataLayer si quieres
+                Log.d("HealthService", "Procesado BPM: $bpm")
             }
         }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        serviceJob.cancel() // ✅ CORREGIDO
-        Log.d("HealthDataService", "Servicio destruido")
+        job.cancel()
     }
 
     companion object {
-        suspend fun registrar(context: Context) {
+
+        // ✅ ESTA ES LA FUNCIÓN QUE TE FALTABA
+        fun registrar(context: Context) {
+
             try {
+
                 val healthClient = HealthServices.getClient(context)
                 val passiveClient = healthClient.passiveMonitoringClient
 
@@ -62,12 +60,12 @@ class HealthDataService : PassiveListenerService() {
                 passiveClient.setPassiveListenerServiceAsync(
                     HealthDataService::class.java,
                     config
-                ).await()
+                )
 
-                Log.d("HealthDataService", "Registro exitoso")
+                Log.d("HealthDataService", "✅ Servicio registrado correctamente")
+
             } catch (e: Exception) {
-                Log.e("HealthDataService", "Error: ${e.message}", e)
-                throw e
+                Log.e("HealthDataService", "❌ Error registrando servicio", e)
             }
         }
     }
