@@ -6,17 +6,35 @@ import kotlinx.coroutines.flow.*
 import mx.utng.smarthealthmonitor.data.SmartHealthRepository
 import mx.utng.smarthealthmonitor.data.db.LecturaFC
  
+// Estado de UI unificado para Compose TV
+data class TvState(
+    val fc: Int = 72,
+    val pasos: Int = 72,
+    val lecturas: List<LecturaFC> = emptyList()
+)
+
+// Extensiones de LecturaFC para compatibilidad con la interfaz
+val LecturaFC.bpm: Int get() = valorBpm
+val LecturaFC.estado: String get() = if (esNormal) "Frecuencia normal" else "Frecuencia inusual"
+
 class TvViewModel : ViewModel() {
  
-    // FC actual del wearable (o 0 si no hay dato)
-    val fc: StateFlow<Int> = SmartHealthRepository.fcFlow
-        .stateIn(viewModelScope,
-                 SharingStarted.WhileSubscribed(5_000), 0)
- 
-    // Historial de lecturas desde Room DAO
-    val historial: StateFlow<List<LecturaFC>> =
-        SmartHealthRepository.obtenerHistorial()
-            .stateIn(viewModelScope,
-                     SharingStarted.WhileSubscribed(5_000),
-                     emptyList())
+    private val _state = MutableStateFlow(TvState())
+    val state: StateFlow<TvState> = _state.asStateFlow()
+
+    init {
+        combine(
+            SmartHealthRepository.fcFlow,
+            SmartHealthRepository.pasosFlow,
+            SmartHealthRepository.obtenerHistorial()
+        ) { fc, pasos, lecturas ->
+            TvState(
+                fc = if (fc > 0) fc else 72,
+                pasos = if (pasos > 0) pasos else 72,
+                lecturas = lecturas
+            )
+        }.onEach { newState ->
+            _state.value = newState
+        }.launchIn(viewModelScope)
+    }
 }

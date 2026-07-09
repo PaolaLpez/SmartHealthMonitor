@@ -1,10 +1,14 @@
 [
     {
-        "merged": "mx.utng.smarthealthmonitor.tv-debug-36:/drawable_banner_tv.xml.flat",
-        "source": "mx.utng.smarthealthmonitor.tv-main-38:/drawable/banner_tv.xml"
+        "merged": "mx.utng.smarthealthmonitor.tv-debug-55:/layout_activity_main.xml.flat",
+        "source": "mx.utng.smarthealthmonitor.tv-main-57:/layout/activity_main.xml"
     },
     {
-        "merged": "mx.utng.smarthealthmonitor.tv-debug-36:/layout_activity_main.xml.flat",
-        "source": "mx.utng.smarthealthmonitor.tv-main-38:/layout/activity_main.xml"
+        "merged": "mx.utng.smarthealthmonitor.tv-debug-55:/drawable_banner_tv.xml.flat",
+        "source": "mx.utng.smarthealthmonitor.tv-main-57:/drawable/banner_tv.xml"
+    },
+    {
+        "merged": "mx.utng.smarthealthmonitor.tv-debug-55:/raw_alerta.mp4.flat",
+        "source": "mx.utng.smarthealthmonitor.tv-main-57:/raw/alerta.mp4"
     }
 ]

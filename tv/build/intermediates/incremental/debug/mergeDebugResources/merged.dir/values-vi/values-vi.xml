@@ -17,33 +17,20 @@
     <item quantity="one">Tua lại %d giây</item>
     <item quantity="other">Tua lại %d giây</item>
   </plurals>
-    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Điều hướng về trang chủ"</string>
-    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Điều hướng lên trên"</string>
-    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Tùy chọn khác"</string>
-    <string msgid="4076576682505996667" name="abc_action_mode_done">"Xong"</string>
-    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Xem tất cả"</string>
-    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Chọn một ứng dụng"</string>
-    <string msgid="121134116657445385" name="abc_capital_off">"TẮT"</string>
-    <string msgid="3405795526292276155" name="abc_capital_on">"BẬT"</string>
-    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
-    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
-    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"delete"</string>
-    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"enter"</string>
-    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Function+"</string>
-    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
-    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Shift+"</string>
-    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"phím cách"</string>
-    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
-    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"Menu+"</string>
-    <string msgid="7723749260725869598" name="abc_search_hint">"Tìm kiếm…"</string>
-    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Xóa truy vấn"</string>
-    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Tìm kiếm truy vấn"</string>
-    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Tìm kiếm"</string>
-    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Gửi truy vấn"</string>
-    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Tìm kiếm bằng giọng nói"</string>
-    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Chia sẻ với"</string>
-    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Chia sẻ với <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
-    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Thu gọn"</string>
+    <string msgid="8719607706653693137" name="androidx_compose_foundation_autofill">"Tự động điền"</string>
+    <string msgid="1150566100598813236" name="androidx_compose_ui_autofill">"Tự động điền"</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"Trả lời"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"Video"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"Từ chối"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"Kết thúc"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"Cuộc gọi đến"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Cuộc gọi đang thực hiện"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"Đang sàng lọc cuộc gọi đến"</string>
+    <string msgid="406453423630273620" name="close_drawer">"Đóng trình đơn điều hướng"</string>
+    <string msgid="7573152094250666567" name="close_sheet">"Đóng trang tính"</string>
+    <string msgid="8038256446254964252" name="default_error_message">"Giá trị nhập không hợp lệ"</string>
+    <string msgid="6312721426453364202" name="default_popup_window_title">"Cửa sổ bật lên"</string>
+    <string msgid="1890207353314751437" name="dropdown_menu">"Trình đơn thả xuống"</string>
     <string name="exo_controls_cc_disabled_description">Bật phụ đề</string>
     <string name="exo_controls_cc_enabled_description">Tắt phụ đề</string>
     <string name="exo_controls_fastforward_description">Tua đi</string>
@@ -94,45 +81,21 @@
     <string name="exo_track_surround_7_point_1">Âm thanh vòm 7.1</string>
     <string name="exo_track_unknown">Không xác định</string>
     <string name="exo_track_unknown_name">Không xác định (%1$s)</string>
-    <string msgid="4657191930956702614" name="lb_control_display_fast_forward_multiplier">"%1$dX"</string>
-    <string msgid="4597148235912710942" name="lb_control_display_rewind_multiplier">"%1$dX"</string>
-    <string msgid="893619591225519922" name="lb_guidedaction_continue_title">"Tiếp tục"</string>
-    <string msgid="3330958750346333890" name="lb_guidedaction_finish_title">"Hoàn tất"</string>
-    <string msgid="3228326776757666747" name="lb_media_player_error">"Mã lỗi MediaPlayer %1$d %2$d bổ sung"</string>
-    <string msgid="8084428500709675515" name="lb_navigation_menu_contentDescription">"Menu điều hướng"</string>
-    <string msgid="2394451791544864917" name="lb_onboarding_accessibility_next">"Tiếp"</string>
-    <string msgid="5549711907371161292" name="lb_onboarding_get_started">"BẮT ĐẦU"</string>
-    <string msgid="8691966842977635128" name="lb_playback_controls_closed_captioning_disable">"Tắt phụ đề"</string>
-    <string msgid="2346334170216706076" name="lb_playback_controls_closed_captioning_enable">"Bật phụ đề"</string>
-    <string msgid="740570111678243493" name="lb_playback_controls_fast_forward">"Tua đi"</string>
-    <string msgid="5734614175721471329" name="lb_playback_controls_fast_forward_multiplier">"Tua đi %1$dX"</string>
-    <string msgid="5859666950961624736" name="lb_playback_controls_hidden">"Điều khiển phương tiện bị ẩn, nhấn d-pad để hiển thị"</string>
-    <string msgid="1209119371486219736" name="lb_playback_controls_high_quality_disable">"Tắt chế độ chất lượng cao"</string>
-    <string msgid="3057698527166674705" name="lb_playback_controls_high_quality_enable">"Bật chế độ chất lượng cao"</string>
-    <string msgid="8730341244454469032" name="lb_playback_controls_more_actions">"Thao tác khác"</string>
-    <string msgid="917331776961802657" name="lb_playback_controls_pause">"Tạm dừng"</string>
-    <string msgid="5770668162543767702" name="lb_playback_controls_picture_in_picture">"Vào chế độ hình trong hình"</string>
-    <string msgid="7088090604803481121" name="lb_playback_controls_play">"Phát"</string>
-    <string msgid="8429099206716245199" name="lb_playback_controls_repeat_all">"Lặp lại tất cả"</string>
-    <string msgid="1614290959784265209" name="lb_playback_controls_repeat_none">"Không lặp lại"</string>
-    <string msgid="676658705837320560" name="lb_playback_controls_repeat_one">"Lặp lại một mục"</string>
-    <string msgid="2866333981131020771" name="lb_playback_controls_rewind">"Tua lại"</string>
-    <string msgid="6038956370475252734" name="lb_playback_controls_rewind_multiplier">"Tua lại %1$dX"</string>
-    <string msgid="8690223891515602822" name="lb_playback_controls_shown">"Điều khiển phương tiện được hiển thị"</string>
-    <string msgid="6793109999253893369" name="lb_playback_controls_shuffle_disable">"Tắt phát ngẫu nhiên"</string>
-    <string msgid="5151681938752704485" name="lb_playback_controls_shuffle_enable">"Bật phát ngẫu nhiên"</string>
-    <string msgid="8117512422682146745" name="lb_playback_controls_skip_next">"Chuyển đến mục tiếp theo"</string>
-    <string msgid="3481218248309447059" name="lb_playback_controls_skip_previous">"Chuyển về mục trước"</string>
-    <string msgid="3544533410444618518" name="lb_playback_controls_thumb_down">"Bỏ chọn không thích"</string>
-    <string msgid="8475278766138652105" name="lb_playback_controls_thumb_down_outline">"Chọn không thích"</string>
-    <string msgid="3458671378107738666" name="lb_playback_controls_thumb_up">"Bỏ chọn thích"</string>
-    <string msgid="1385865732502550659" name="lb_playback_controls_thumb_up_outline">"Chọn thích"</string>
-    <string msgid="1471121602610716654" name="lb_playback_time_separator">"/"</string>
-    <string msgid="5700349211583074131" name="lb_search_bar_hint">"Tìm kiếm"</string>
-    <string msgid="5926531297066387462" name="lb_search_bar_hint_speech">"Nói để tìm kiếm"</string>
-    <string msgid="4826526877249029043" name="lb_search_bar_hint_with_title">"Tìm kiếm <ns1:g id="SEARCH_CONTEXT">%1$s</ns1:g>"</string>
-    <string msgid="6032250334706920550" name="lb_search_bar_hint_with_title_speech">"Nói để tìm kiếm <ns1:g id="SEARCH_CONTEXT">%1$s</ns1:g>"</string>
-    <string msgid="1301877238242752863" name="orb_search_action">"Tác vụ tìm kiếm"</string>
-    <string msgid="146198913615257606" name="search_menu_title">"Tìm kiếm"</string>
+    <string msgid="6827826412747255547" name="in_progress">"Đang thực hiện"</string>
+    <string msgid="7933458017204019916" name="indeterminate">"Đã kiểm tra một phần"</string>
+    <string msgid="542007171693138492" name="navigation_menu">"Trình đơn điều hướng"</string>
+    <string msgid="6610465462668679431" name="not_selected">"Chưa chọn"</string>
+    <string msgid="5941395253238309765" name="range_end">"Điểm kết thúc phạm vi"</string>
+    <string msgid="7097486360902471446" name="range_start">"Điểm bắt đầu phạm vi"</string>
+    <string msgid="6043586758067023" name="selected">"Đã chọn"</string>
+    <string msgid="2792228137354697160" name="snackbar_pane_title">"Cảnh báo"</string>
+    <string msgid="4139871816613051306" name="state_empty">"Trống"</string>
+    <string msgid="5834637030682409883" name="state_off">"Đang tắt"</string>
+    <string msgid="1490883874751719580" name="state_on">"Đang bật"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="2561197295334830845" name="switch_role">"Chuyển"</string>
+    <string msgid="1672349317127674378" name="tab">"Thẻ"</string>
+    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g>%%."</string>
+    <string msgid="3765533235322692011" name="tooltip_description">"chú thích"</string>
+    <string msgid="3124740595719787496" name="tooltip_label">"hiện chú thích"</string>
 </resources>
