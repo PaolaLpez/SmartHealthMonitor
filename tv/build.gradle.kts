@@ -1,10 +1,7 @@
-plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
-}
+apply(plugin = "com.android.application")
+apply(plugin = "com.google.devtools.ksp")
 
-android {
+configure<com.android.build.api.dsl.ApplicationExtension> {
     namespace = "mx.utng.smarthealthmonitor.tv"
     compileSdk = 36
 
@@ -20,25 +17,30 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-
-    kotlinOptions {
-        jvmTarget = "11"
-    }
 }
 
 dependencies {
     // Leanback Library — el estándar de Android TV
-    implementation("androidx.leanback:leanback:1.2.0")
+    add("implementation", "androidx.leanback:leanback:1.2.0")
     // Glide para cargar imágenes en las cards
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+    add("implementation", "com.github.bumptech.glide:glide:4.16.0")
+    
     // Room dependencies for local database
     val roomVersion = "2.6.1"
-    implementation("androidx.room:room-runtime:$roomVersion")
-    implementation("androidx.room:room-ktx:$roomVersion")
-    ksp("androidx.room:room-compiler:$roomVersion")
+    add("implementation", "androidx.room:room-runtime:$roomVersion")
+    add("implementation", "androidx.room:room-ktx:$roomVersion")
+    add("ksp", "androidx.room:room-compiler:$roomVersion")
+
+    // Media3 + ExoPlayer for TV audio playback
+    val media3Version = "1.4.1"
+    add("implementation", "androidx.media3:media3-exoplayer:$media3Version")
+    add("implementation", "androidx.media3:media3-ui:$media3Version")
+    // LeanbackPlayerAdapter conecta ExoPlayer con la UI de Leanback en Media3
+    add("implementation", "androidx.media3:media3-ui-leanback:$media3Version")
+
     // Fragment & ViewModel support
-    implementation("androidx.fragment:fragment-ktx:1.8.2")
+    add("implementation", "androidx.fragment:fragment-ktx:1.8.2")
     // ViewModel + Coroutines
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
+    add("implementation", "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
+    add("implementation", "androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
 }

@@ -2,11 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.BODY_SENSORS" />
-    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
-
     <application
-        android:name=".SmartHealthApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -24,6 +20,7 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -34,12 +31,15 @@
             android:exported="true">
 
             <intent-filter>
-                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
+
+                <action
+                    android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
 
                 <data
                     android:scheme="wear"
                     android:host="*"
-                    android:pathPrefix="/" />
+                    android:pathPrefix="/smarthealthmonitor" />
+
             </intent-filter>
 
         </service>

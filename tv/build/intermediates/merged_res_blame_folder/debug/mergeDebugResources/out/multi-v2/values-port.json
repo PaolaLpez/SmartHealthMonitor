@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "mx.utng.smarthealthmonitor.tv-mergeDebugResources-34:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ADMIN\\.gradle\\caches\\9.4.1\\transforms\\42dfd80d8d4ea28809579fa312970f20\\transformed\\appcompat-1.0.0\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

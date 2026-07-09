@@ -29,6 +29,17 @@ class MainFragment : BrowseSupportFragment() {
  
         cargarFilas()
         observarDatos()
+
+        // Conectar el clic de la tarjeta con la pantalla de detalles (Sesión 12)
+        setOnItemViewClickedListener { _, item, _, _ ->
+            if (item is LecturaFC) {
+                val detail = DetailFragment.newInstance(item.id)
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.main_browse_fragment, detail)
+                    .addToBackStack(null) // Regresa con el botón Back
+                    .commit()
+            }
+        }
     }
  
     private fun observarDatos() {

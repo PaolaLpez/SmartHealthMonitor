@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import mx.utng.smarthealthmonitor.data.db.LecturaFC
+import mx.utng.smarthealthmonitor.data.models.LecturaFC
 
 @Composable
 fun FilaHistorial(
@@ -27,6 +27,7 @@ fun FilaHistorial(
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
 
+        // Valor FC con color según si es normal o no
         Text(
             text = "${lectura.valorBpm} bpm",
 

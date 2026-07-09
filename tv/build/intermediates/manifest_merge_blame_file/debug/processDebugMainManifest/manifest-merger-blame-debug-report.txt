@@ -1,0 +1,142 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="mx.utng.smarthealthmonitor.tv"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+7-->INJECTED
+8        android:minSdkVersion="30"
+8-->INJECTED
+9        android:targetSdkVersion="36" />
+9-->INJECTED
+10
+11    <!-- Declarar que es una app de TV -->
+12    <uses-feature
+12-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:6:5-7:35
+13        android:name="android.software.leanback"
+13-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:6:19-59
+14        android:required="true" />
+14-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:7:9-32
+15    <!-- No requiere pantalla tactil -->
+16    <uses-feature
+16-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:9:5-10:36
+17        android:name="android.hardware.touchscreen"
+17-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:9:19-62
+18        android:required="false" />
+18-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:10:9-33
+19
+20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+20-->[androidx.media3:media3-exoplayer:1.4.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\fae325bd881f64ab2db4564baf9e9f2c\transformed\media3-exoplayer-1.4.1\AndroidManifest.xml:22:5-79
+20-->[androidx.media3:media3-exoplayer:1.4.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\fae325bd881f64ab2db4564baf9e9f2c\transformed\media3-exoplayer-1.4.1\AndroidManifest.xml:22:22-76
+21
+22    <permission
+22-->[androidx.core:core:1.9.0] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\3ae56e3b7b4a3fbba36431028e6bcf81\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+23        android:name="mx.utng.smarthealthmonitor.tv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+23-->[androidx.core:core:1.9.0] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\3ae56e3b7b4a3fbba36431028e6bcf81\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+24        android:protectionLevel="signature" />
+24-->[androidx.core:core:1.9.0] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\3ae56e3b7b4a3fbba36431028e6bcf81\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+25
+26    <uses-permission android:name="mx.utng.smarthealthmonitor.tv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+26-->[androidx.core:core:1.9.0] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\3ae56e3b7b4a3fbba36431028e6bcf81\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+26-->[androidx.core:core:1.9.0] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\3ae56e3b7b4a3fbba36431028e6bcf81\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+27
+28    <application
+28-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:12:5-25:19
+29        android:name="mx.utng.smarthealthmonitor.tv.SmartHealthTVApp"
+29-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:13:9-41
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.9.0] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\3ae56e3b7b4a3fbba36431028e6bcf81\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+31        android:banner="@drawable/banner_tv"
+31-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:15:9-45
+32        android:debuggable="true"
+33        android:extractNativeLibs="false"
+33-->INJECTED
+34        android:testOnly="true"
+35        android:theme="@style/Theme.SmartHealthTV" > <!-- 320x180dp -->
+35-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:14:9-51
+36        <activity
+36-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:16:9-24:20
+37            android:name="mx.utng.smarthealthmonitor.tv.MainActivity"
+37-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:16:19-47
+38            android:exported="true"
+38-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:17:13-36
+39            android:label="SmartHealth TV" >
+39-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:18:13-43
+40            <intent-filter>
+40-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:19:13-23:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:20:17-69
+41-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:20:25-66
+42                <!-- Categoria LEANBACK_LAUNCHER: aparece en launcher TV -->
+43                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+43-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:22:17-86
+43-->C:\Users\ADMIN\AndroidStudioProjects\SmartHealthMonitor3\tv\src\main\AndroidManifest.xml:22:27-83
+44            </intent-filter>
+45        </activity>
+46
+47        <service
+47-->[androidx.room:room-runtime:2.6.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\4b5fe0256c8f763fd4275c059d04c948\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+48            android:name="androidx.room.MultiInstanceInvalidationService"
+48-->[androidx.room:room-runtime:2.6.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\4b5fe0256c8f763fd4275c059d04c948\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+49            android:directBootAware="true"
+49-->[androidx.room:room-runtime:2.6.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\4b5fe0256c8f763fd4275c059d04c948\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+50            android:exported="false" />
+50-->[androidx.room:room-runtime:2.6.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\4b5fe0256c8f763fd4275c059d04c948\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+51
+52        <provider
+52-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+53            android:name="androidx.startup.InitializationProvider"
+53-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:25:13-67
+54            android:authorities="mx.utng.smarthealthmonitor.tv.androidx-startup"
+54-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:26:13-68
+55            android:exported="false" >
+55-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:27:13-37
+56            <meta-data
+56-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+57                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+57-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+58                android:value="androidx.startup" />
+58-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+59        </provider>
+60
+61        <receiver
+61-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+62            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+62-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+63            android:directBootAware="false"
+63-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+64            android:enabled="true"
+64-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+65            android:exported="true"
+65-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+66            android:permission="android.permission.DUMP" >
+66-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+67            <intent-filter>
+67-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+68                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+68-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+68-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+69            </intent-filter>
+70            <intent-filter>
+70-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+71                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+71-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+71-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+72            </intent-filter>
+73            <intent-filter>
+73-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+74                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+74-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+74-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+75            </intent-filter>
+76            <intent-filter>
+76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+77                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ADMIN\.gradle\caches\9.4.1\transforms\c38c8d1f3d170768590a9c3b549869e8\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+78            </intent-filter>
+79        </receiver>
+80    </application>
+81
+82</manifest>
