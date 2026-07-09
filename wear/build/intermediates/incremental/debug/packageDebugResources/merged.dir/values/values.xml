@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SmartHealthMonitor3</string>
+    <string name="hello_world">Hello, %1$s!</string>
+    <style name="MainActivityTheme.Starting" parent="Theme.SmartHealthMonitor.Wear"/>
+    <style name="Theme.SmartHealthMonitor.Wear" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+</resources>
