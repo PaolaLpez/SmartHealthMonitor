@@ -17,33 +17,20 @@
     <item quantity="one">%d সেকেন্ড রিওয়াইন্ড করুন</item>
     <item quantity="other">%d সেকেন্ড রিওয়াইন্ড করুন</item>
   </plurals>
-    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"হোম এ নেভিগেট করুন"</string>
-    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"উপরের দিকে নেভিগেট করুন"</string>
-    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"আরও বিকল্প"</string>
-    <string msgid="4076576682505996667" name="abc_action_mode_done">"সম্পন্ন হয়েছে"</string>
-    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"সবগুলো দেখুন"</string>
-    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"একটি অ্যাপ্লিকেশান বেছে নিন"</string>
-    <string msgid="121134116657445385" name="abc_capital_off">"বন্ধ"</string>
-    <string msgid="3405795526292276155" name="abc_capital_on">"চালু"</string>
-    <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
-    <string msgid="1324831542140195728" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
-    <string msgid="8362206064229013510" name="abc_menu_delete_shortcut_label">"মুছুন"</string>
-    <string msgid="8341180395196749340" name="abc_menu_enter_shortcut_label">"enter"</string>
-    <string msgid="4792426091847145555" name="abc_menu_function_shortcut_label">"Function+"</string>
-    <string msgid="7643535737296831317" name="abc_menu_meta_shortcut_label">"Meta+"</string>
-    <string msgid="8126296154200614004" name="abc_menu_shift_shortcut_label">"Shift+"</string>
-    <string msgid="2378550843553983978" name="abc_menu_space_shortcut_label">"স্পেস"</string>
-    <string msgid="9002602288060866689" name="abc_menu_sym_shortcut_label">"Sym+"</string>
-    <string msgid="1351762916121158029" name="abc_prepend_shortcut_label">"মেনু+"</string>
-    <string msgid="7723749260725869598" name="abc_search_hint">"অনুসন্ধান..."</string>
-    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"ক্যোয়ারী সাফ করুন"</string>
-    <string msgid="2550479030709304392" name="abc_searchview_description_query">"ক্যোয়ারী খুঁজুন"</string>
-    <string msgid="8264924765203268293" name="abc_searchview_description_search">"খুঁজুন"</string>
-    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"ক্যোয়ারী জমা দিন"</string>
-    <string msgid="893419373245838918" name="abc_searchview_description_voice">"ভয়েস অনুসন্ধান"</string>
-    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"এর সাথে শেয়ার করুন"</string>
-    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g> এর সাথে শেয়ার করুন"</string>
-    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"সঙ্কুচিত করুন"</string>
+    <string msgid="8719607706653693137" name="androidx_compose_foundation_autofill">"অটোফিল করুন"</string>
+    <string msgid="1150566100598813236" name="androidx_compose_ui_autofill">"অটোফিল করুন"</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"উত্তর দিন"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"ভিডিও"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"বাতিল করুন"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"কল কেটে দিন"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"ইনকামিং কল"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"চালু থাকা কল"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"ইনকামিং কল স্ক্রিনিং করা হচ্ছে"</string>
+    <string msgid="406453423630273620" name="close_drawer">"নেভিগেশন মেনু বন্ধ করুন"</string>
+    <string msgid="7573152094250666567" name="close_sheet">"শিট বন্ধ করুন"</string>
+    <string msgid="8038256446254964252" name="default_error_message">"ভুল ইনপুট"</string>
+    <string msgid="6312721426453364202" name="default_popup_window_title">"পপ-আপ উইন্ডো"</string>
+    <string msgid="1890207353314751437" name="dropdown_menu">"ড্রপডাউন মেনু"</string>
     <string name="exo_controls_cc_disabled_description">সাবটাইটেল চালু করুন</string>
     <string name="exo_controls_cc_enabled_description">সাবটাইটেল বন্ধ করুন</string>
     <string name="exo_controls_fastforward_description">দ্রুত এগিয়ে যান</string>
@@ -94,45 +81,21 @@
     <string name="exo_track_surround_7_point_1">7.1 সারাউন্ড সাউন্ড</string>
     <string name="exo_track_unknown">অজানা</string>
     <string name="exo_track_unknown_name">অজানা (%1$s)</string>
-    <string msgid="4657191930956702614" name="lb_control_display_fast_forward_multiplier">"%1$dX"</string>
-    <string msgid="4597148235912710942" name="lb_control_display_rewind_multiplier">"%1$dX"</string>
-    <string msgid="893619591225519922" name="lb_guidedaction_continue_title">"এগিয়ে যান"</string>
-    <string msgid="3330958750346333890" name="lb_guidedaction_finish_title">"শেষ করুন"</string>
-    <string msgid="3228326776757666747" name="lb_media_player_error">"MediaPlayer সমস্যা কোড %1$d অতিরিক্ত %2$d"</string>
-    <string msgid="8084428500709675515" name="lb_navigation_menu_contentDescription">"নেভিগেশন মেনু"</string>
-    <string msgid="2394451791544864917" name="lb_onboarding_accessibility_next">"পরবর্তী"</string>
-    <string msgid="5549711907371161292" name="lb_onboarding_get_started">"শুরু করা যাক"</string>
-    <string msgid="8691966842977635128" name="lb_playback_controls_closed_captioning_disable">"সাবটাইটেল বন্ধ করুন"</string>
-    <string msgid="2346334170216706076" name="lb_playback_controls_closed_captioning_enable">"সাবটাইটেল চালু করুন"</string>
-    <string msgid="740570111678243493" name="lb_playback_controls_fast_forward">"ফাস্ট ফরওয়ার্ড"</string>
-    <string msgid="5734614175721471329" name="lb_playback_controls_fast_forward_multiplier">"%1$dX স্পিডে ফাস্ট ফরওয়ার্ড করুন"</string>
-    <string msgid="5859666950961624736" name="lb_playback_controls_hidden">"মিডিয়ার নিয়ন্ত্রণগুলি লুকানো আছে, দেখার জন্য ডি-প্যাড টিপুন"</string>
-    <string msgid="1209119371486219736" name="lb_playback_controls_high_quality_disable">"খুব ভাল কোয়ালিটি বন্ধ করুন"</string>
-    <string msgid="3057698527166674705" name="lb_playback_controls_high_quality_enable">"খুব ভাল কোয়ালিটি চালু করুন"</string>
-    <string msgid="8730341244454469032" name="lb_playback_controls_more_actions">"আরও অ্যাক্টিভিটি"</string>
-    <string msgid="917331776961802657" name="lb_playback_controls_pause">"পজ করুন"</string>
-    <string msgid="5770668162543767702" name="lb_playback_controls_picture_in_picture">"\'ছবির মধ্যে ছবি\' মোডে যান"</string>
-    <string msgid="7088090604803481121" name="lb_playback_controls_play">"চালান"</string>
-    <string msgid="8429099206716245199" name="lb_playback_controls_repeat_all">"সবগুলি আইটেম আবার চালান"</string>
-    <string msgid="1614290959784265209" name="lb_playback_controls_repeat_none">"কোনও আইটেম আবার চালাবেন না"</string>
-    <string msgid="676658705837320560" name="lb_playback_controls_repeat_one">"একটি আইটেম আবার চালান"</string>
-    <string msgid="2866333981131020771" name="lb_playback_controls_rewind">"পিছিয়ে যান"</string>
-    <string msgid="6038956370475252734" name="lb_playback_controls_rewind_multiplier">"%1$dX স্পিডে পিছিয়ে যান"</string>
-    <string msgid="8690223891515602822" name="lb_playback_controls_shown">"মিডিয়ার নিয়ন্ত্রণগুলি দেখানো হয়েছে"</string>
-    <string msgid="6793109999253893369" name="lb_playback_controls_shuffle_disable">"শাফেল বন্ধ করুন"</string>
-    <string msgid="5151681938752704485" name="lb_playback_controls_shuffle_enable">"শাফেল চালু করুন"</string>
-    <string msgid="8117512422682146745" name="lb_playback_controls_skip_next">"সরাসরি পরেরটিতে চলে যান"</string>
-    <string msgid="3481218248309447059" name="lb_playback_controls_skip_previous">"সরাসরি আগেরটিতে চলে যান"</string>
-    <string msgid="3544533410444618518" name="lb_playback_controls_thumb_down">"নিচের দিকে করা বুড়ো আঙ্গুলের চিহ্নকে বাদ দিন"</string>
-    <string msgid="8475278766138652105" name="lb_playback_controls_thumb_down_outline">"নিচের দিকে করা বুড়ো আঙ্গুলের চিহ্নকে বেছে নিন"</string>
-    <string msgid="3458671378107738666" name="lb_playback_controls_thumb_up">"উপরের দিকে করা বুড়ো আঙ্গুলের চিহ্নকে বাদ দিন"</string>
-    <string msgid="1385865732502550659" name="lb_playback_controls_thumb_up_outline">"উপরের দিকে করা বুড়ো আঙ্গুলের চিহ্নকে বেছে নিন"</string>
-    <string msgid="1471121602610716654" name="lb_playback_time_separator">"/"</string>
-    <string msgid="5700349211583074131" name="lb_search_bar_hint">"সার্চ"</string>
-    <string msgid="5926531297066387462" name="lb_search_bar_hint_speech">"বলার মাধ্যমে খুঁজুন"</string>
-    <string msgid="4826526877249029043" name="lb_search_bar_hint_with_title">"<ns1:g id="SEARCH_CONTEXT">%1$s</ns1:g> খুঁজুন"</string>
-    <string msgid="6032250334706920550" name="lb_search_bar_hint_with_title_speech">"<ns1:g id="SEARCH_CONTEXT">%1$s</ns1:g> বলে সেটি খুঁজুন"</string>
-    <string msgid="1301877238242752863" name="orb_search_action">"খোঁজার অ্যাক্টিভিটি"</string>
-    <string msgid="146198913615257606" name="search_menu_title">"খুঁজুন"</string>
+    <string msgid="6827826412747255547" name="in_progress">"কাজ চলছে"</string>
+    <string msgid="7933458017204019916" name="indeterminate">"কয়েকটি বিকল্প বেছে নেওয়া হয়েছে"</string>
+    <string msgid="542007171693138492" name="navigation_menu">"নেভিগেশন মেনু"</string>
+    <string msgid="6610465462668679431" name="not_selected">"বেছে নেওয়া হয়নি"</string>
+    <string msgid="5941395253238309765" name="range_end">"রেঞ্জ শেষ"</string>
+    <string msgid="7097486360902471446" name="range_start">"রেঞ্জ শুরু"</string>
+    <string msgid="6043586758067023" name="selected">"বেছে নেওয়া হয়েছে"</string>
+    <string msgid="2792228137354697160" name="snackbar_pane_title">"সতর্কতা"</string>
+    <string msgid="4139871816613051306" name="state_empty">"ফাঁকা"</string>
+    <string msgid="5834637030682409883" name="state_off">"বন্ধ আছে"</string>
+    <string msgid="1490883874751719580" name="state_on">"চালু আছে"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"৯৯৯+"</string>
+    <string msgid="2561197295334830845" name="switch_role">"সুইচ"</string>
+    <string msgid="1672349317127674378" name="tab">"ট্যাব"</string>
+    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> শতাংশ।"</string>
+    <string msgid="3765533235322692011" name="tooltip_description">"টুলটিপ"</string>
+    <string msgid="3124740595719787496" name="tooltip_label">"টুলটিপ দেখুন"</string>
 </resources>

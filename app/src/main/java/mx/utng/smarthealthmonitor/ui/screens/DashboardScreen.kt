@@ -26,6 +26,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
+import androidx.compose.foundation.layout.size
+import androidx.mediarouter.app.MediaRouteButton
+import com.google.android.gms.cast.framework.CastButtonFactory
 import androidx.lifecycle.viewmodel.compose.viewModel
 import mx.utng.smarthealthmonitor.ui.components.FilaHistorial
 import mx.utng.smarthealthmonitor.ui.components.TarjetaDato
@@ -66,7 +70,27 @@ fun DashboardScreen(
                     colors = TopAppBarDefaults.topAppBarColors(
                         containerColor = MaterialTheme.colorScheme.primary,
                         titleContentColor = MaterialTheme.colorScheme.onPrimary
-                    )
+                    ),
+
+                    actions = {
+                        // CastButton: AndroidView que envuelve MediaRouteButton
+                        AndroidView(
+                            factory = { context ->
+                                val themedContext = androidx.appcompat.view.ContextThemeWrapper(
+                                    context,
+                                    androidx.appcompat.R.style.Theme_AppCompat_Light
+                                )
+                                MediaRouteButton(themedContext).apply {
+                                    try {
+                                        CastButtonFactory.setUpMediaRouteButton(themedContext, this)
+                                    } catch (e: Exception) {
+                                        android.util.Log.e("Cast", "Error setting up Cast button", e)
+                                    }
+                                }
+                            },
+                            modifier = Modifier.size(48.dp)
+                        )
+                    }
                 )
             },
 

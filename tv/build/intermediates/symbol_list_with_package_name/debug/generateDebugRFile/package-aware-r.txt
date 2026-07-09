@@ -6,4 +6,5 @@ color sh_primary
 drawable banner_tv
 id main_browse_fragment
 layout activity_main
+raw alerta
 style Theme_SmartHealthTV

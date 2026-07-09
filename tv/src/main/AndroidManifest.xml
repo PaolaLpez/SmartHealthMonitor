@@ -13,7 +13,7 @@
         android:name=".SmartHealthTVApp"
         android:theme="@style/Theme.SmartHealthTV"
         android:banner="@drawable/banner_tv"> <!-- 320x180dp -->
-        <activity android:name=".MainActivity"
+        <activity android:name=".TVActivity"
             android:exported="true"
             android:label="SmartHealth TV">
             <intent-filter>
