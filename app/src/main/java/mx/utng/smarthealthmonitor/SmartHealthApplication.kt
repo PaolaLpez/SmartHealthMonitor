@@ -4,6 +4,8 @@ import android.app.Application
 import mx.utng.smarthealthmonitor.mqtt.MqttAppService
 import mx.utng.smarthealthmonitor.data.SmartHealthRepository
 
+import mx.utng.smarthealthmonitor.data.sync.NeonSyncWorker
+
 class SmartHealthApplication : Application() {
     lateinit var mqttService: MqttAppService
  
@@ -15,5 +17,8 @@ class SmartHealthApplication : Application() {
             fcFlow  = SmartHealthRepository.fcFlow
         )
         mqttService.connect()
+
+        // Programar sync periódico con Neon
+        NeonSyncWorker.schedule(this)
     }
 }
