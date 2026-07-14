@@ -15,18 +15,28 @@ class TVActivity : ComponentActivity() {
         setContent {
             androidx.tv.material3.MaterialTheme {
                 val navController = rememberNavController()
+                val sharedViewModel: TvViewModel = androidx.lifecycle.viewmodel.compose.viewModel(
+                    factory = TvViewModelFactory(applicationContext)
+                )
                 NavHost(navController, startDestination = "catalog") {
                     composable("catalog") {
-                        TvCatalogScreen(onCardClick = { lecturaId ->
-                            navController.navigate("detail/$lecturaId")
-                        })
+                        TvCatalogScreen(
+                            onCardClick = { lecturaId ->
+                                navController.navigate("detail/$lecturaId")
+                            },
+                            viewModel = sharedViewModel
+                        )
                     }
                     composable(
                         route = "detail/{lecturaId}",
                         arguments = listOf(navArgument("lecturaId") { type = NavType.IntType })
                     ) { backStack ->
                         val id = backStack.arguments?.getInt("lecturaId") ?: return@composable
-                        TvDetailScreen(lecturaId = id, navController = navController)
+                        TvDetailScreen(
+                            lecturaId = id,
+                            navController = navController,
+                            viewModel = sharedViewModel
+                        )
                     }
                     composable("playback") {
                         TvPlaybackScreen(navController = navController)
