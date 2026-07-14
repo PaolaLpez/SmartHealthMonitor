@@ -24,9 +24,9 @@ fun WearDashboardScreen(
 ) {
 
     val historial by WearDataHolder.historial.collectAsState()
+    val fc by WearDataHolder.fc.collectAsState()
 
     val pasos = 72
-    val fc = 72
 
     Scaffold(
         timeText = { TimeText() }

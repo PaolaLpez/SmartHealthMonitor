@@ -21,6 +21,8 @@ object WearScreens {
 fun SmartHealthWearNavGraph() {
 
     val navController = rememberSwipeDismissableNavController()
+    // Instanciar WearViewModel para activar la conexión y recolección
+    val viewModel: WearViewModel = viewModel()
 
     SwipeDismissableNavHost(
         navController = navController,
