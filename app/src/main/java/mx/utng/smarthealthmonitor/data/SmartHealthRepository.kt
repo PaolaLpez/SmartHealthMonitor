@@ -12,15 +12,14 @@ import kotlinx.coroutines.flow.asStateFlow
 object SmartHealthRepository {
 
     // FC actual del wearable (bpm)
-    private val _fcFlow = MutableStateFlow(0)
-    val fcFlow: StateFlow<Int> = _fcFlow.asStateFlow()
+    val fcFlow = MutableStateFlow(0)
 
     // Pasos del día actual
     private val _pasosFlow = MutableStateFlow(0)
     val pasosFlow: StateFlow<Int> = _pasosFlow.asStateFlow()
 
     fun actualizarFC(bpm: Int) {
-        _fcFlow.value = bpm
+        fcFlow.value = bpm
     }
 
     fun actualizarPasos(pasos: Int) {
